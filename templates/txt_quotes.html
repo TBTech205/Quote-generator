@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'include/link.html' %}
+
+<style>
+    body {
+        background-color: #444;
+    }
+    
+    section {
+        padding: 100px 0;
+        text-align: center;
+    }
+    @media (max-width: 991px) {
+	    section {
+            padding: 30px 0;
+            text-align: center;
+        }
+    }
+    
+    .img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+
+        border-radius: 8px;
+    }
+    @media (max-width: 991px) {
+	    .img {
+            width: 100%;
+        }
+    }
+
+    .button {
+        margin: 10px;
+        background: #333333;
+        color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        padding: 10px;
+    }
+    
+    .card-container {
+        display: flex;
+        justify-content: center;
+    }
+    .card-container .card {
+        width: 400px;
+        border-radius: 8px;
+        overflow: auto;
+        padding: 0.75rem 1.25rem;
+        background-color: #333333;
+    }
+    .card-container .card .card-title {
+        color: #fff;
+        font-size: 25px;
+        font-family: "Roboto", sans-serif;
+    }
+    .card-container .card .card-quote {
+        color: #fff;
+        font-size: 18px;
+        font-family: "Roboto", sans-serif;
+    }
+    
+</style>
+
+
+<body>
+    {% include 'include/nav.html' %}
+    
+    <main>
+        <section>
+            <div class="container">
+                <div id="root">
+                    <div>
+                        <div class="card-container">
+                            <div class="card">
+                                <h1 class="card-title">{{text_quote[0]}}</h1>
+                                <p class="card-quote">{{text_quote[1]}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button 
+                    id="btn"
+                    type="button"
+                    class="button"
+                >
+                New Quote
+                </button>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        document.getElementById("btn").addEventListener("click", (e) => {
+            e.preventDefault();
+            location.reload()
+        });
+   
+    </script>
+</body>
+</html>

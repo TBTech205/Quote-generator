@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'include/link.html' %}
+
+<style>
+    body {
+        background-color: #444;
+    }
+    
+    section {
+        padding: 100px 0;
+        text-align: center;
+    }
+    @media (max-width: 991px) {
+	    section {
+            padding: 30px 0;
+            text-align: center;
+        }
+    }
+    
+    .img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+
+        border-radius: 8px;
+    }
+    @media (max-width: 991px) {
+	    .img {
+            width: 100%;
+        }
+    }
+
+    .button {
+        margin: 10px;
+        background: #333333;
+        color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+</style>
+
+
+<body>
+    {% include 'include/nav.html' %}
+    
+    <main>
+        <section>
+            <div class="container">
+                <div id="root">
+                    <div>
+                        <img class="img" id="img" src="{{quote}}" alt="img">
+                    </div>
+                </div>
+                
+                <button 
+                    id="btn"
+                    type="button"
+                    class="button"
+                >
+                New Quote
+                </button>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        document.getElementById("btn").addEventListener("click", (e) => {
+            e.preventDefault();
+            location.reload()
+        });
+   
+    </script>
+
+</body>
+</html>
